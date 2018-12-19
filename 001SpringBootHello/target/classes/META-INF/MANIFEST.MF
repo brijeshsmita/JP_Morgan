@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: 001SpringBootHello
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: brije
+Implementation-Vendor-Id: com.jpm.springboot
+Build-Jdk: 1.8.0_11
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/001SpringBootHello
+Created-By: Maven Integration for Eclipse
+
