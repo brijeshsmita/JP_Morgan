@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: SpringBoot2_Secured_JPA_Rest006
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: brije
+Implementation-Vendor-Id: com.smita.springboot
+Build-Jdk: 1.8.0_11
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/SpringBoot2_Secured_JPA_Rest006
+Created-By: Maven Integration for Eclipse
+
