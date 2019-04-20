@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,7 +34,12 @@ import com.jpm.boot_user.service.IUserService;
  *@DeleteMapping -Delete method
  *http://localhost:8080/
  */
+/*This @CrossOrigin annotation enables cross-origin requests only for controller or the specific method. By default, its allows all origins, all headers, the HTTP methods specified in the @RequestMapping annotation and a maxAge of 30 minutes is used. You can customize this behavior by specifying the value of one of the annotation attributes: origins, methods, allowedHeaders, exposedHeaders, allowCredentials or maxAge. In this example, we only allow http://localhost:8082 to send cross-origin requests.*/
+//prep-work 1> @CrossOrigin
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+//prep-work 2> @RestController
 @RestController
+//prep-work 3> @RequestMapping
 @RequestMapping("/api/users")
 public class UserController {
 	@Autowired
