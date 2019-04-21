@@ -59,24 +59,24 @@ public class UserController {
 		return userList;*/
 	}
 //http://localhost:8080/api/users/getUser/1	
-	@GetMapping(path="/getUser/{userId}" ,produces="application/json")
+	@GetMapping(path="/getUser/{id}" ,produces="application/json")
 	//value passed along with url ,variable passed along with path
-	public User getUserById(@PathVariable Long userId) throws MyUserException {
-		return userService.getUserById(userId);
+	public User getUserById(@PathVariable Long id) throws MyUserException {
+		return userService.getUserById(id);
 	}
 	//http://localhost:8080/api/users/addUser
 	@PostMapping(path="/addUser")
 	public String addUser(@RequestBody User user) throws MyUserException {
 		User addedUser = userService.addUser(user);
 		if(addedUser!=null)
-			return "User Added with unique User Id : "+addedUser.getUserId();
+			return "User Added with unique User Id : "+addedUser.getId();
 		return "Adding User Failed!!";
 	}
 	// http://localhost:8080/api/users/deleteUser/1
-	@DeleteMapping("/deleteUser/{userId}")
-	public String deleteUser(@PathVariable Long userId) throws MyUserException {
-		System.out.println("Record Deleted with Id : "+userId);
-		User delUser = userService.deleteUser(userId);
+	@DeleteMapping("/deleteUser/{id}")
+	public String deleteUser(@PathVariable Long id) throws MyUserException {
+		System.out.println("Record Deleted with Id : "+id);
+		User delUser = userService.deleteUser(id);
 		if(delUser==null)
 			return "User Deleted";
 		return "Removing User Failed!!";
@@ -91,7 +91,7 @@ public class UserController {
 		if (userFound==null)
 			return ResponseEntity.notFound().build();
 
-		user.setUserId(id);
+		user.setId(id);
 		
 		userService.updateUser(user);
 		System.out.println("Record Updated : "+user);

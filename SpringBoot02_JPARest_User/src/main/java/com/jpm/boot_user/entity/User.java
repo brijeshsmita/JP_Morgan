@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -19,8 +20,9 @@ import javax.persistence.Table;
 public class User implements Serializable{
 	private static final long serialVersionUID = 6325307718376939175L;
 	@Id
+	@GeneratedValue
 	@Column(name="USER_ID")
-	private Long userId;
+	private Long id;
 	
 	@Column(name="FIRST_NAME")
 	private String firstName;
@@ -34,9 +36,9 @@ public class User implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(Long userId, String firstName, String lastName, String email) {
+	public User(Long id, String firstName, String lastName, String email) {
 		super();
-		this.userId = userId;
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -51,15 +53,15 @@ public class User implements Serializable{
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
 	}
 
-	public Long getUserId() {
-		return userId;
+	public Long getId() {
+		return id;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setId(Long id) {
+		this.id = id;
 	}	
 
 	public String getFirstName() {
