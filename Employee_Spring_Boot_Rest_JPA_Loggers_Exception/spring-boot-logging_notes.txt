@@ -1,0 +1,62 @@
+references :https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html#boot-features-custom-log-configuration
+
+
+<dependency>			   <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-starter-logging</artifactId>
+</dependency>
+
+In Application.properties
+
+#loggers
+logging.level.root=WARN
+logging.level.org.springframework.web=DEBUG
+logging.level.org.hibernate=ERROR
+
+
+since in Spring 5 (Spring Boot 2.x) it’s provided by Spring Framework’s spring-jcl module.
+We shouldn’t worry about importing spring-jcl at all if we’re using a Spring Boot Starter (which almost always we are). That’s because every starter, like our spring-boot-starter-web, depends on spring-boot-starter-logging, which already pulls in spring-jcl for us.
+When using starters, Logback is used for logging by default.
+Spring Boot pre-configures it with patterns and ANSI colors to make the standard output more readable.
+
+
+how to include a Logback configuration 
+When a file in the classpath has one of the following names, Spring Boot will automatically load it over the default configuration:
+logback-spring.xml
+logback.xml
+logback-spring.groovy
+logback.groovy
+
+Spring recommends using the -spring variant over the plain ones whenever possible, as described here.
+Let’s write a simple resources/logback-spring.xml:
+
+<configuration>
+
+    <property name="HOME_LOG" value="logs/app.log"/>
+
+    <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${HOME_LOG}</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/archived/app.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <!-- each archived file, size max 10MB -->
+            <maxFileSize>10MB</maxFileSize>
+            <!-- total size of all archive files, if total size > 20GB, it will delete old archived file -->
+            <totalSizeCap>20GB</totalSizeCap>
+            <!-- 60 days to keep -->
+            <maxHistory>60</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d %p %c{1.} [%t] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.smita" level="debug" additivity="false">
+        <appender-ref ref="FILE-ROLLING"/>
+    </logger>
+
+    <root level="error">
+        <appender-ref ref="FILE-ROLLING"/>
+    </root>
+
+</configuration>

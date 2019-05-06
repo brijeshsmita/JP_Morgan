@@ -1,0 +1,36 @@
+2019-05-07 02:52:24,090 INFO com.smita.springboot.SpringBoot2SecuredJpaRest006Application [restartedMain] Starting SpringBoot2SecuredJpaRest006Application on Smita with PID 8040 (E:\JP_Morgan_Batch2\SpringJPM_WS\SpringBoot2_Secured_JPA_Rest006\target\classes started by Smita B Kumar in E:\JP_Morgan_Batch2\SpringJPM_WS\SpringBoot2_Secured_JPA_Rest006)
+2019-05-07 02:52:24,095 DEBUG com.smita.springboot.SpringBoot2SecuredJpaRest006Application [restartedMain] Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-05-07 02:52:24,098 INFO com.smita.springboot.SpringBoot2SecuredJpaRest006Application [restartedMain] No active profile set, falling back to default profiles: default
+2019-05-07 02:52:31,821 DEBUG org.springframework.web.context.ContextLoader [restartedMain] Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-07 02:52:31,834 INFO org.springframework.web.context.ContextLoader [restartedMain] Root WebApplicationContext: initialization completed in 7586 ms
+2019-05-07 02:52:38,338 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [restartedMain] Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-07 02:52:39,147 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [restartedMain] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-05-07 02:52:39,546 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-05-07 02:52:39,728 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [restartedMain] 8 mappings in 'requestMappingHandlerMapping'
+2019-05-07 02:52:39,812 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [restartedMain] Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-07 02:52:39,899 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [restartedMain] ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-07 02:52:41,366 INFO com.smita.springboot.SpringBoot2SecuredJpaRest006Application [restartedMain] Started SpringBoot2SecuredJpaRest006Application in 18.424 seconds (JVM running for 19.734)
+2019-05-07 02:53:20,264 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8082-exec-1] Initializing Servlet 'dispatcherServlet'
+2019-05-07 02:53:20,264 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8082-exec-1] Detected StandardServletMultipartResolver
+2019-05-07 02:53:20,285 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8082-exec-1] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-05-07 02:53:20,285 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8082-exec-1] Completed initialization in 21 ms
+2019-05-07 02:53:20,403 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8082-exec-1] POST "/api/employees/save", parameters={}
+2019-05-07 02:53:20,426 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [http-nio-8082-exec-1] Mapped to public org.springframework.http.HttpStatus com.smita.springboot.controller.EmployeeController.saveEmployee(com.smita.springboot.entities.Employee) throws com.smita.springboot.exception.EmployeeException
+2019-05-07 02:53:20,951 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor [http-nio-8082-exec-1] Read "application/json;charset=UTF-8" to [Employee [employeeId=null, name=Jia, salary=99999.0]]
+2019-05-07 02:53:21,007 INFO com.smita.springboot.dao.EmployeeDao [http-nio-8082-exec-1] Trying to persist employee at dao addEmployee method
+2019-05-07 02:53:21,153 INFO com.smita.springboot.dao.EmployeeDao [http-nio-8082-exec-1] Persisted employee at dao addEmployee method with unique Id : 31
+2019-05-07 02:53:21,214 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor [http-nio-8082-exec-1] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-05-07 02:53:21,214 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor [http-nio-8082-exec-1] Writing [201 CREATED]
+2019-05-07 02:53:21,237 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8082-exec-1] Completed 200 OK
+2019-05-07 02:54:50,344 INFO com.smita.springboot.SpringBoot2SecuredJpaRest006Application [restartedMain] Starting SpringBoot2SecuredJpaRest006Application on Smita with PID 8040 (E:\JP_Morgan_Batch2\SpringJPM_WS\SpringBoot2_Secured_JPA_Rest006\target\classes started by Smita B Kumar in E:\JP_Morgan_Batch2\SpringJPM_WS\SpringBoot2_Secured_JPA_Rest006)
+2019-05-07 02:54:50,345 DEBUG com.smita.springboot.SpringBoot2SecuredJpaRest006Application [restartedMain] Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-05-07 02:54:50,346 INFO com.smita.springboot.SpringBoot2SecuredJpaRest006Application [restartedMain] No active profile set, falling back to default profiles: default
+2019-05-07 02:54:52,684 DEBUG org.springframework.web.context.ContextLoader [restartedMain] Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-05-07 02:54:52,687 INFO org.springframework.web.context.ContextLoader [restartedMain] Root WebApplicationContext: initialization completed in 2319 ms
+2019-05-07 02:54:53,642 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [restartedMain] Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-05-07 02:54:53,919 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [restartedMain] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-05-07 02:54:53,933 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-05-07 02:54:53,997 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [restartedMain] 8 mappings in 'requestMappingHandlerMapping'
+2019-05-07 02:54:54,008 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [restartedMain] Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-05-07 02:54:54,063 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [restartedMain] ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-05-07 02:54:54,655 INFO com.smita.springboot.SpringBoot2SecuredJpaRest006Application [restartedMain] Started SpringBoot2SecuredJpaRest006Application in 4.47 seconds (JVM running for 153.024)

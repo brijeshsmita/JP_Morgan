@@ -1,0 +1,8 @@
+Global Exception Handling using @ControllerAdvice
+Add a class with annotation @ControllerAdvice and @RestController. This will make the class return a Rest Response.
+
+
+@ControllerAdvice tells your spring application that this class will do the exception handling for your application. 
+@RestController will make it a controller and let this class render the response.
+Use @ExceptionHandler annotation to define the class of Exception it will catch. (A Base class will catch all the Inherited and extended classes) 
+You can set the response status for exception using @ResponseStatus annotation.
