@@ -1,0 +1,29 @@
+HttpHeaders responseHeaders = new HttpHeaders();
+			    responseHeaders.set("Create Employee ResponseHeader", "MyValue");
+			    return new ResponseEntity<String>("Employee Object Added with unique Employee Id : " 
+				+ employee.getEmployeeId(), responseHeaders, HttpStatus.CREATED);
+
+
+// http://localhost:8082/api/employees/createEmp
+	@PostMapping("/createEmp")
+	ResponseEntity<String> createEmp(@RequestBody Employee employee)
+			throws EmployeeException, EmployeeAlreadyExistsException {
+		try {
+			employee = employeeService.createEmp(employee);
+			if (employee != null) {
+			
+			    HttpHeaders responseHeaders = new HttpHeaders();
+			    responseHeaders.set("Create Employee ResponseHeader", "MyValue");
+			    return new ResponseEntity<String>("Employee Object Added with unique Employee Id : " 
+				+ employee.getEmployeeId(), responseHeaders, HttpStatus.CREATED);
+				/*return ResponseEntity.status(HttpStatus.OK)
+						.body("Employee Object Added with unique Employee Id : " 
+								+ employee.getEmployeeId());*/
+			} else {
+				return ResponseEntity.badRequest().body("Employee Object is Null");
+			}
+		} catch (EmployeeException e) {
+			throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY,
+					"Error while creating employee : " + e.getLocalizedMessage());
+		}
+	}
